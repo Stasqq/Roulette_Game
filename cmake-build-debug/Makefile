@@ -122,6 +122,33 @@ roulette_proi_v2/fast:
 	$(MAKE) -f CMakeFiles\roulette_proi_v2.dir\build.make CMakeFiles/roulette_proi_v2.dir/build
 .PHONY : roulette_proi_v2/fast
 
+Bet.obj: Bet.cpp.obj
+
+.PHONY : Bet.obj
+
+# target to build an object file
+Bet.cpp.obj:
+	$(MAKE) -f CMakeFiles\roulette_proi_v2.dir\build.make CMakeFiles/roulette_proi_v2.dir/Bet.cpp.obj
+.PHONY : Bet.cpp.obj
+
+Bet.i: Bet.cpp.i
+
+.PHONY : Bet.i
+
+# target to preprocess a source file
+Bet.cpp.i:
+	$(MAKE) -f CMakeFiles\roulette_proi_v2.dir\build.make CMakeFiles/roulette_proi_v2.dir/Bet.cpp.i
+.PHONY : Bet.cpp.i
+
+Bet.s: Bet.cpp.s
+
+.PHONY : Bet.s
+
+# target to generate assembly for a file
+Bet.cpp.s:
+	$(MAKE) -f CMakeFiles\roulette_proi_v2.dir\build.make CMakeFiles/roulette_proi_v2.dir/Bet.cpp.s
+.PHONY : Bet.cpp.s
+
 Component.obj: Component.cpp.obj
 
 .PHONY : Component.obj
@@ -148,6 +175,60 @@ Component.s: Component.cpp.s
 Component.cpp.s:
 	$(MAKE) -f CMakeFiles\roulette_proi_v2.dir\build.make CMakeFiles/roulette_proi_v2.dir/Component.cpp.s
 .PHONY : Component.cpp.s
+
+Game.obj: Game.cpp.obj
+
+.PHONY : Game.obj
+
+# target to build an object file
+Game.cpp.obj:
+	$(MAKE) -f CMakeFiles\roulette_proi_v2.dir\build.make CMakeFiles/roulette_proi_v2.dir/Game.cpp.obj
+.PHONY : Game.cpp.obj
+
+Game.i: Game.cpp.i
+
+.PHONY : Game.i
+
+# target to preprocess a source file
+Game.cpp.i:
+	$(MAKE) -f CMakeFiles\roulette_proi_v2.dir\build.make CMakeFiles/roulette_proi_v2.dir/Game.cpp.i
+.PHONY : Game.cpp.i
+
+Game.s: Game.cpp.s
+
+.PHONY : Game.s
+
+# target to generate assembly for a file
+Game.cpp.s:
+	$(MAKE) -f CMakeFiles\roulette_proi_v2.dir\build.make CMakeFiles/roulette_proi_v2.dir/Game.cpp.s
+.PHONY : Game.cpp.s
+
+Player.obj: Player.cpp.obj
+
+.PHONY : Player.obj
+
+# target to build an object file
+Player.cpp.obj:
+	$(MAKE) -f CMakeFiles\roulette_proi_v2.dir\build.make CMakeFiles/roulette_proi_v2.dir/Player.cpp.obj
+.PHONY : Player.cpp.obj
+
+Player.i: Player.cpp.i
+
+.PHONY : Player.i
+
+# target to preprocess a source file
+Player.cpp.i:
+	$(MAKE) -f CMakeFiles\roulette_proi_v2.dir\build.make CMakeFiles/roulette_proi_v2.dir/Player.cpp.i
+.PHONY : Player.cpp.i
+
+Player.s: Player.cpp.s
+
+.PHONY : Player.s
+
+# target to generate assembly for a file
+Player.cpp.s:
+	$(MAKE) -f CMakeFiles\roulette_proi_v2.dir\build.make CMakeFiles/roulette_proi_v2.dir/Player.cpp.s
+.PHONY : Player.cpp.s
 
 Roulette.obj: Roulette.cpp.obj
 
@@ -212,9 +293,18 @@ help:
 	@echo ... roulette_proi_v2
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Bet.obj
+	@echo ... Bet.i
+	@echo ... Bet.s
 	@echo ... Component.obj
 	@echo ... Component.i
 	@echo ... Component.s
+	@echo ... Game.obj
+	@echo ... Game.i
+	@echo ... Game.s
+	@echo ... Player.obj
+	@echo ... Player.i
+	@echo ... Player.s
 	@echo ... Roulette.obj
 	@echo ... Roulette.i
 	@echo ... Roulette.s

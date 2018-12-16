@@ -24,7 +24,7 @@ public:
     ~CyclicList<T>();
     CyclicList<T>& operator=(CyclicList<T> const&);
 
-    Node<T>* getByIndex(int);
+    T* getByIndex(int);
     void pushBack(T);
 };
 
@@ -84,12 +84,12 @@ CyclicList<T>& CyclicList<T>::operator=(CyclicList<T> const& from){
 }
 
 template <class T>
-Node<T>* CyclicList<T>::getByIndex(int index) {
+T* CyclicList<T>::getByIndex(int index) {
     Node<T>* cPtr=head;
     for(int i=0;i<index;i++){
         cPtr=cPtr->next;
     }
-    return cPtr;
+    return &cPtr->item;
 }
 
 template <class T>

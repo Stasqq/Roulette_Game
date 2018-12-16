@@ -3,4 +3,4 @@ project(roulette_proi_v2)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(roulette_proi_v2 main.cpp CyclicList.h Component.cpp Component.h Roulette.cpp Roulette.h)
+add_executable(roulette_proi_v2 main.cpp CyclicList.h Component.cpp Component.h Roulette.cpp Roulette.h Game.cpp Game.h Player.cpp Player.h Bet.cpp Bet.h)

@@ -1,10 +1,11 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 #include "Roulette.h"
 
 int main() {
-    Roulette r;
-    r=Roulette();
-    r.printPlate();
+    srand(0);
+
     return 0;
 }

@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Stasiek/Desktop/roulette_proi_v2/Bet.cpp">
+			<Option target="roulette_proi_v2"/>
+		</Unit>
+		<Unit filename="C:/Users/Stasiek/Desktop/roulette_proi_v2/Bet.h">
+			<Option target="roulette_proi_v2"/>
+		</Unit>
 		<Unit filename="C:/Users/Stasiek/Desktop/roulette_proi_v2/Component.cpp">
 			<Option target="roulette_proi_v2"/>
 		</Unit>
@@ -87,6 +93,18 @@
 			<Option target="roulette_proi_v2"/>
 		</Unit>
 		<Unit filename="C:/Users/Stasiek/Desktop/roulette_proi_v2/CyclicList.h">
+			<Option target="roulette_proi_v2"/>
+		</Unit>
+		<Unit filename="C:/Users/Stasiek/Desktop/roulette_proi_v2/Game.cpp">
+			<Option target="roulette_proi_v2"/>
+		</Unit>
+		<Unit filename="C:/Users/Stasiek/Desktop/roulette_proi_v2/Game.h">
+			<Option target="roulette_proi_v2"/>
+		</Unit>
+		<Unit filename="C:/Users/Stasiek/Desktop/roulette_proi_v2/Player.cpp">
+			<Option target="roulette_proi_v2"/>
+		</Unit>
+		<Unit filename="C:/Users/Stasiek/Desktop/roulette_proi_v2/Player.h">
 			<Option target="roulette_proi_v2"/>
 		</Unit>
 		<Unit filename="C:/Users/Stasiek/Desktop/roulette_proi_v2/Roulette.cpp">

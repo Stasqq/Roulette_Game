@@ -4,7 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/Stasiek/Desktop/roulette_proi_v2/Bet.cpp" "C:/Users/Stasiek/Desktop/roulette_proi_v2/cmake-build-debug/CMakeFiles/roulette_proi_v2.dir/Bet.cpp.obj"
   "C:/Users/Stasiek/Desktop/roulette_proi_v2/Component.cpp" "C:/Users/Stasiek/Desktop/roulette_proi_v2/cmake-build-debug/CMakeFiles/roulette_proi_v2.dir/Component.cpp.obj"
+  "C:/Users/Stasiek/Desktop/roulette_proi_v2/Game.cpp" "C:/Users/Stasiek/Desktop/roulette_proi_v2/cmake-build-debug/CMakeFiles/roulette_proi_v2.dir/Game.cpp.obj"
+  "C:/Users/Stasiek/Desktop/roulette_proi_v2/Player.cpp" "C:/Users/Stasiek/Desktop/roulette_proi_v2/cmake-build-debug/CMakeFiles/roulette_proi_v2.dir/Player.cpp.obj"
   "C:/Users/Stasiek/Desktop/roulette_proi_v2/Roulette.cpp" "C:/Users/Stasiek/Desktop/roulette_proi_v2/cmake-build-debug/CMakeFiles/roulette_proi_v2.dir/Roulette.cpp.obj"
   "C:/Users/Stasiek/Desktop/roulette_proi_v2/main.cpp" "C:/Users/Stasiek/Desktop/roulette_proi_v2/cmake-build-debug/CMakeFiles/roulette_proi_v2.dir/main.cpp.obj"
   )

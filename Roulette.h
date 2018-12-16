@@ -10,12 +10,14 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 
 class Roulette {
 private:
     CyclicList<Component> plate;
 public:
     Roulette();
+    Component* draw();
     void printPlate();
 };
 

@@ -95,11 +95,53 @@ CMakeFiles/roulette_proi_v2.dir/Roulette.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/roulette_proi_v2.dir/Roulette.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Stasiek\Desktop\roulette_proi_v2\Roulette.cpp -o CMakeFiles\roulette_proi_v2.dir\Roulette.cpp.s
 
+CMakeFiles/roulette_proi_v2.dir/Game.cpp.obj: CMakeFiles/roulette_proi_v2.dir/flags.make
+CMakeFiles/roulette_proi_v2.dir/Game.cpp.obj: ../Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Stasiek\Desktop\roulette_proi_v2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/roulette_proi_v2.dir/Game.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\roulette_proi_v2.dir\Game.cpp.obj -c C:\Users\Stasiek\Desktop\roulette_proi_v2\Game.cpp
+
+CMakeFiles/roulette_proi_v2.dir/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/roulette_proi_v2.dir/Game.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Stasiek\Desktop\roulette_proi_v2\Game.cpp > CMakeFiles\roulette_proi_v2.dir\Game.cpp.i
+
+CMakeFiles/roulette_proi_v2.dir/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/roulette_proi_v2.dir/Game.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Stasiek\Desktop\roulette_proi_v2\Game.cpp -o CMakeFiles\roulette_proi_v2.dir\Game.cpp.s
+
+CMakeFiles/roulette_proi_v2.dir/Player.cpp.obj: CMakeFiles/roulette_proi_v2.dir/flags.make
+CMakeFiles/roulette_proi_v2.dir/Player.cpp.obj: ../Player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Stasiek\Desktop\roulette_proi_v2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/roulette_proi_v2.dir/Player.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\roulette_proi_v2.dir\Player.cpp.obj -c C:\Users\Stasiek\Desktop\roulette_proi_v2\Player.cpp
+
+CMakeFiles/roulette_proi_v2.dir/Player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/roulette_proi_v2.dir/Player.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Stasiek\Desktop\roulette_proi_v2\Player.cpp > CMakeFiles\roulette_proi_v2.dir\Player.cpp.i
+
+CMakeFiles/roulette_proi_v2.dir/Player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/roulette_proi_v2.dir/Player.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Stasiek\Desktop\roulette_proi_v2\Player.cpp -o CMakeFiles\roulette_proi_v2.dir\Player.cpp.s
+
+CMakeFiles/roulette_proi_v2.dir/Bet.cpp.obj: CMakeFiles/roulette_proi_v2.dir/flags.make
+CMakeFiles/roulette_proi_v2.dir/Bet.cpp.obj: ../Bet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Stasiek\Desktop\roulette_proi_v2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/roulette_proi_v2.dir/Bet.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\roulette_proi_v2.dir\Bet.cpp.obj -c C:\Users\Stasiek\Desktop\roulette_proi_v2\Bet.cpp
+
+CMakeFiles/roulette_proi_v2.dir/Bet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/roulette_proi_v2.dir/Bet.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Stasiek\Desktop\roulette_proi_v2\Bet.cpp > CMakeFiles\roulette_proi_v2.dir\Bet.cpp.i
+
+CMakeFiles/roulette_proi_v2.dir/Bet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/roulette_proi_v2.dir/Bet.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Stasiek\Desktop\roulette_proi_v2\Bet.cpp -o CMakeFiles\roulette_proi_v2.dir\Bet.cpp.s
+
 # Object files for target roulette_proi_v2
 roulette_proi_v2_OBJECTS = \
 "CMakeFiles/roulette_proi_v2.dir/main.cpp.obj" \
 "CMakeFiles/roulette_proi_v2.dir/Component.cpp.obj" \
-"CMakeFiles/roulette_proi_v2.dir/Roulette.cpp.obj"
+"CMakeFiles/roulette_proi_v2.dir/Roulette.cpp.obj" \
+"CMakeFiles/roulette_proi_v2.dir/Game.cpp.obj" \
+"CMakeFiles/roulette_proi_v2.dir/Player.cpp.obj" \
+"CMakeFiles/roulette_proi_v2.dir/Bet.cpp.obj"
 
 # External object files for target roulette_proi_v2
 roulette_proi_v2_EXTERNAL_OBJECTS =
@@ -107,11 +149,14 @@ roulette_proi_v2_EXTERNAL_OBJECTS =
 roulette_proi_v2.exe: CMakeFiles/roulette_proi_v2.dir/main.cpp.obj
 roulette_proi_v2.exe: CMakeFiles/roulette_proi_v2.dir/Component.cpp.obj
 roulette_proi_v2.exe: CMakeFiles/roulette_proi_v2.dir/Roulette.cpp.obj
+roulette_proi_v2.exe: CMakeFiles/roulette_proi_v2.dir/Game.cpp.obj
+roulette_proi_v2.exe: CMakeFiles/roulette_proi_v2.dir/Player.cpp.obj
+roulette_proi_v2.exe: CMakeFiles/roulette_proi_v2.dir/Bet.cpp.obj
 roulette_proi_v2.exe: CMakeFiles/roulette_proi_v2.dir/build.make
 roulette_proi_v2.exe: CMakeFiles/roulette_proi_v2.dir/linklibs.rsp
 roulette_proi_v2.exe: CMakeFiles/roulette_proi_v2.dir/objects1.rsp
 roulette_proi_v2.exe: CMakeFiles/roulette_proi_v2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Stasiek\Desktop\roulette_proi_v2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable roulette_proi_v2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Stasiek\Desktop\roulette_proi_v2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable roulette_proi_v2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\roulette_proi_v2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
