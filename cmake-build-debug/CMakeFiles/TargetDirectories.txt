@@ -1,0 +1,3 @@
+C:/Users/Stasiek/Desktop/roulette_proi_v2/cmake-build-debug/CMakeFiles/roulette_proi_v2.dir
+C:/Users/Stasiek/Desktop/roulette_proi_v2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Stasiek/Desktop/roulette_proi_v2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

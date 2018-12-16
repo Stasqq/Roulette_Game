@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Stasiek/Desktop/roulette_proi_v2/Component.h
+string
+-
+
+C:/Users/Stasiek/Desktop/roulette_proi_v2/CyclicList.h
+iostream
+-
+
+C:/Users/Stasiek/Desktop/roulette_proi_v2/Roulette.cpp
+Roulette.h
+C:/Users/Stasiek/Desktop/roulette_proi_v2/Roulette.h
+
+C:/Users/Stasiek/Desktop/roulette_proi_v2/Roulette.h
+CyclicList.h
+C:/Users/Stasiek/Desktop/roulette_proi_v2/CyclicList.h
+Component.h
+C:/Users/Stasiek/Desktop/roulette_proi_v2/Component.h
+string
+-
+iostream
+-
+fstream
+-
+
