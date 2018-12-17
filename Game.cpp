@@ -45,7 +45,9 @@ void Game::menuSwitch(int x) {
             Component* random;
             random=roulette.draw();
             cout<<"It's: "<< random->getColor() << " " << random->getValue() <<endl;
-
+            for(int i=0;i<playersNumber;i++){
+                players.getByIndex(i)->checkBets(random);
+            }
             //TODO::DONT KNOW WHY IT DONT CHECK BETS,DONT EVEN GO TO FUNCTION!!!!!!!!!!!!!!GRRRRRRRRRRRRRRRRRR
         }break;
         case 2:{
