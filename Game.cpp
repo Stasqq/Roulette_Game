@@ -48,7 +48,9 @@ void Game::menuSwitch(int x) {
             for(int i=0;i<playersNumber;i++){
                 players.getByIndex(i)->checkBets(random);
             }
-            //TODO::DONT KNOW WHY IT DONT CHECK BETS,DONT EVEN GO TO FUNCTION!!!!!!!!!!!!!!GRRRRRRRRRRRRRRRRRR
+            for(int i=0;i<playersNumber;i++){
+                players.getByIndex(i)->clearBets();
+            }
         }break;
         case 2:{
             string name;

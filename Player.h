@@ -22,6 +22,7 @@ public:
     void addBet(int,enum betType,int*,int);
     void checkBet(Bet*,Component*);
     void checkBets(Component*);
+    void clearBets();
 
     int getMoney();
     void addMoney(int);

@@ -4,8 +4,10 @@
 
 #include "Game.h"
 #include <windows.h>
+#include <time.h>
+
 int main() {
-    srand(0);
+    srand(time(NULL));
     Game g;
     g=Game();
     g.run();

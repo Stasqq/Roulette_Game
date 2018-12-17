@@ -123,7 +123,7 @@ int CyclicList<T>::size() {
         do {
             counter++;
             cPtr = cPtr->next;
-        } while (cPtr->next == head);
+        } while (cPtr->next != head);
 
         return counter;
     }

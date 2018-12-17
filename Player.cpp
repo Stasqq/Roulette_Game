@@ -120,6 +120,10 @@ void Player::checkBets(Component* field) {
     }
 }
 
+void Player::clearBets() {
+    bets=CyclicList<Bet>();
+}
+
 int Player::getMoney() {
     return money;
 }
