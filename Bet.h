@@ -13,10 +13,17 @@ class Bet {
 private:
     enum betType bt;
     int *tab;
+    int howMuch;
+    int numberOfFields;
 public:
-    explicit Bet(enum betType); //for first 10 types
-    Bet(enum betType,int); //for column,sixLine,cornerBet,line,straight
-    Bet(enum betType,int,int); //for split
+    explicit Bet(enum betType,int); //for first 10 types
+    Bet(enum betType,int*,int,int); //for column,sixLine,cornerBet,line,straight,split
+
+    bool checkValue(int);
+
+    int getType();
+    int getHowMuch();
+    int* getTab();
 };
 
 

@@ -26,6 +26,8 @@ public:
 
     T* getByIndex(int);
     void pushBack(T);
+    T* getHead();
+    int size();
 };
 
 template <class T>
@@ -113,5 +115,25 @@ void CyclicList<T>::pushBack(T newItem) {
     }
 }
 
+template <class T>
+T* CyclicList<T>::getHead() {
+    return head;
+}
+
+template <class T>
+int CyclicList<T>::size() {
+    if(head != nullptr) {
+        Node<T> *cPtr;
+        cPtr = head;
+        int counter = 0;
+        do {
+            counter++;
+            cPtr = cPtr->next;
+        } while (cPtr->next == head);
+
+        return counter;
+    }
+    return 0;
+}
 
 #endif //ROULETTE_PROI_V2_CYCLICLIST_H

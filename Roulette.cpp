@@ -24,7 +24,7 @@ Roulette::Roulette() {
 }
 
 Component* Roulette::draw() {
-    int x=rand()%100;
+    int x=rand()%74;
     return plate.getByIndex(x);
 }
 

@@ -4,16 +4,34 @@
 
 #include "Bet.h"
 
-Bet::Bet(enum betType t) {
+Bet::Bet(enum betType t, int howMuch) {
     bt=t;
+    Bet::howMuch=howMuch;
 }
 
-Bet::Bet(enum betType t, int which) {
+Bet::Bet(enum betType t, int *numbers, int howMuch, int numberOfFields) {
     bt=t;
+    tab=numbers;
+    Bet::howMuch=howMuch;
+    Bet::numberOfFields=numberOfFields;
 }
 
-Bet::Bet(enum betType t, int st, int nd){
-    bt=t;
-    tab[0]=st;
-    tab[1]=nd;
+bool Bet::checkValue(int looking) {
+    for(int i=0;i<numberOfFields;i++){
+        if(tab[i]==looking)
+            return true;
+    }
+    return false;
+}
+
+int Bet::getType() {
+    return bt;
+}
+
+int Bet::getHowMuch() {
+    return howMuch;
+}
+
+int* Bet::getTab() {
+    return tab;
 }
