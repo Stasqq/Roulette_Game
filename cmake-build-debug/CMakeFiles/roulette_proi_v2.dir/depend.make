@@ -16,6 +16,7 @@ CMakeFiles/roulette_proi_v2.dir/Game.cpp.obj: ../Player.h
 CMakeFiles/roulette_proi_v2.dir/Game.cpp.obj: ../Roulette.h
 
 CMakeFiles/roulette_proi_v2.dir/Player.cpp.obj: ../Bet.h
+CMakeFiles/roulette_proi_v2.dir/Player.cpp.obj: ../Component.h
 CMakeFiles/roulette_proi_v2.dir/Player.cpp.obj: ../CyclicList.h
 CMakeFiles/roulette_proi_v2.dir/Player.cpp.obj: ../Player.cpp
 CMakeFiles/roulette_proi_v2.dir/Player.cpp.obj: ../Player.h
@@ -25,8 +26,11 @@ CMakeFiles/roulette_proi_v2.dir/Roulette.cpp.obj: ../CyclicList.h
 CMakeFiles/roulette_proi_v2.dir/Roulette.cpp.obj: ../Roulette.cpp
 CMakeFiles/roulette_proi_v2.dir/Roulette.cpp.obj: ../Roulette.h
 
+CMakeFiles/roulette_proi_v2.dir/main.cpp.obj: ../Bet.h
 CMakeFiles/roulette_proi_v2.dir/main.cpp.obj: ../Component.h
 CMakeFiles/roulette_proi_v2.dir/main.cpp.obj: ../CyclicList.h
+CMakeFiles/roulette_proi_v2.dir/main.cpp.obj: ../Game.h
+CMakeFiles/roulette_proi_v2.dir/main.cpp.obj: ../Player.h
 CMakeFiles/roulette_proi_v2.dir/main.cpp.obj: ../Roulette.h
 CMakeFiles/roulette_proi_v2.dir/main.cpp.obj: ../main.cpp
 

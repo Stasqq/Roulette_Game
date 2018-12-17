@@ -9,12 +9,15 @@
 #include "CyclicList.h"
 #include "Component.h"
 
+#include <cstdlib>
+
 class Player {
 private:
     CyclicList<Bet> bets;
     int money;
+    std::string name;
 public:
-    explicit Player(int);
+    Player();
     void addBet(int,enum betType);
     void addBet(int,enum betType,int*,int);
     void checkBet(Bet*,Component*);
@@ -22,6 +25,8 @@ public:
 
     int getMoney();
     void addMoney(int);
+    void setName(std::string);
+    std::string getName();
 };
 
 

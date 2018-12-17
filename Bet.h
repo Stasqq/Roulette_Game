@@ -16,6 +16,7 @@ private:
     int howMuch;
     int numberOfFields;
 public:
+    Bet();
     explicit Bet(enum betType,int); //for first 10 types
     Bet(enum betType,int*,int,int); //for column,sixLine,cornerBet,line,straight,split
 

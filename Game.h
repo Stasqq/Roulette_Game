@@ -10,10 +10,19 @@
 #include "Component.h"
 #include "Player.h"
 
+#include <iostream>
+#include <string>
+
 class Game {
 private:
+    int playersNumber;
     Roulette roulette;
     CyclicList<Player> players;
+public:
+    Game();
+    int printMenu();
+    void menuSwitch(int);
+    void run();
 };
 
 

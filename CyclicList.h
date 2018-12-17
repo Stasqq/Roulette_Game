@@ -26,7 +26,6 @@ public:
 
     T* getByIndex(int);
     void pushBack(T);
-    T* getHead();
     int size();
 };
 
@@ -39,7 +38,7 @@ template <class T>
 CyclicList<T>::CyclicList(CyclicList<T> &from) {
     CyclicList<T> *tmpCL;
     tmpCL = new CyclicList();
-    Node<T> *tmpP;
+    struct Node<T> *tmpP;
     tmpP=from.head;
 
     if(tmpP != nullptr){
@@ -56,8 +55,8 @@ template <class T>
 CyclicList<T>::~CyclicList<T>() {
     if(head != nullptr) {
         if (head->next != head) {
-            Node<T> *cPtr = head->next;
-            Node<T> *sPtr;
+            struct Node<T> *cPtr = head->next;
+            struct Node<T> *sPtr;
             while (cPtr != head) {
                 sPtr = cPtr;
                 cPtr = cPtr->next;
@@ -72,7 +71,7 @@ CyclicList<T>::~CyclicList<T>() {
 template <class T>
 CyclicList<T>& CyclicList<T>::operator=(CyclicList<T> const& from){
     this->head= nullptr;
-    Node<T>* cPtr;
+    struct Node<T>* cPtr;
     cPtr = from.head;
     if(from.head != nullptr){
         do{
@@ -87,7 +86,7 @@ CyclicList<T>& CyclicList<T>::operator=(CyclicList<T> const& from){
 
 template <class T>
 T* CyclicList<T>::getByIndex(int index) {
-    Node<T>* cPtr=head;
+    struct Node<T>* cPtr=head;
     for(int i=0;i<index;i++){
         cPtr=cPtr->next;
     }
@@ -96,8 +95,8 @@ T* CyclicList<T>::getByIndex(int index) {
 
 template <class T>
 void CyclicList<T>::pushBack(T newItem) {
-    Node<T> *tmp;
-    tmp = new Node<T>;
+    struct Node<T> *tmp;
+    tmp = new struct Node<T>;
     if(head == nullptr){
         head=tmp;
         tmp->item=newItem;
@@ -116,14 +115,9 @@ void CyclicList<T>::pushBack(T newItem) {
 }
 
 template <class T>
-T* CyclicList<T>::getHead() {
-    return head;
-}
-
-template <class T>
 int CyclicList<T>::size() {
     if(head != nullptr) {
-        Node<T> *cPtr;
+        struct Node<T> *cPtr;
         cPtr = head;
         int counter = 0;
         do {

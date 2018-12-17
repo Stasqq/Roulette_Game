@@ -4,6 +4,11 @@
 
 #include "Bet.h"
 
+Bet::Bet(){
+    bt=red;
+    howMuch=0;
+}
+
 Bet::Bet(enum betType t, int howMuch) {
     bt=t;
     Bet::howMuch=howMuch;

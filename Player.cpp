@@ -4,9 +4,10 @@
 
 #include "Player.h"
 
-Player::Player(int input) {
-    money=input;
+Player::Player() {
+    money=0;
     bets=CyclicList<Bet>();
+    name=" ";
 }
 
 void Player::addBet(int howMuch, enum betType typ) {
@@ -108,7 +109,7 @@ void Player::checkBet(Bet *bet, Component *field) {
     }
 }
 
-void Player::checkBets(Component *field) {
+void Player::checkBets(Component* field) {
     if(bets.size() != 0) {
         int nrBet=bets.size();
         for(int i=0;i<nrBet;i++) {
@@ -126,3 +127,12 @@ int Player::getMoney() {
 void Player::addMoney(int newMoney) {
     money += newMoney;
 }
+
+void Player::setName(std::string x) {
+    name=x;
+}
+
+std::string Player::getName() {
+    return name;
+}
+
