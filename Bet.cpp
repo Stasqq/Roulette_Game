@@ -19,7 +19,6 @@ Bet::Bet(enum betType t, int howMuch) {
 Bet::Bet(enum betType t, int *numbers, int howMuch, int numberOfFields) {
     bt=t;
     tab=numbers;
-    std::cout<<tab[0]<<tab[1]<<tab[2]<<std::endl;
     Bet::howMuch=howMuch;
     Bet::numberOfFields=numberOfFields;
 }
@@ -40,10 +39,11 @@ void Bet::saveToFile(std::fstream* file) {
         for(int i=0;i<numberOfFields;i++){
             *file<<tab[i];
             if(i != numberOfFields-1)
-                *file<<" ";
+                *file<<"\n";
         }
+    }else{
+        *file<<0;
     }
-    *file<<"\n";
 }
 
 int Bet::getType() {

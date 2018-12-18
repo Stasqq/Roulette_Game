@@ -25,82 +25,82 @@ void Player::addBet(int howMuch, enum betType typ, int *numbers,int howMuchNumbe
 void Player::checkBet(Bet *bet, Component *field) {
     int type=bet->getType();
     switch(type){
-        case 0:{
+        case 1:{
             if(field->getColor() == "red"){
                 money = money + bet->getHowMuch() * 2;
             }
         }break;
-        case 1:{
+        case 2:{
             if(field->getColor() == "black"){
                 money = money + bet->getHowMuch() * 2;
             }
         }break;
-        case 2:{
+        case 3:{
             if(field->getValue() < 19 && field->getValue() != 0){
                 money = money + bet->getHowMuch() * 2;
             }
         }break;
-        case 3:{
+        case 4:{
             if(field->getValue() > 18){
                 money = money + bet->getHowMuch() * 2;
             }
         }break;
-        case 4:{
+        case 5:{
             if(field->getValue()%2 == 0){
                 money = money + bet->getHowMuch() * 2;
             }
         }break;
-        case 5:{
+        case 6:{
             if(field->getValue()%2 == 1){
                 money = money + bet->getHowMuch() * 2;
             }
         }break;
-        case 6:{
+        case 7:{
             if(field->getValue() > 0 && field->getValue() < 13){
                 money = money + bet->getHowMuch() * 3;
             }
         }break;
-        case 7:{
+        case 8:{
             if(field->getValue() > 12 && field->getValue() < 25){
                 money = money + bet->getHowMuch() * 3;
             }
         }break;
-        case 8:{
+        case 9:{
             if(field->getValue() > 24 && field->getValue() < 37){
                 money = money + bet->getHowMuch() * 3;
             }
         }break;
-        case 9:{
+        case 10:{
             if(field->getValue() < 4){
                 money = money + bet->getHowMuch() * 7;
             }
         }break;
-        case 10:{
+        case 11:{
             if(bet->checkValue(field->getValue())){
                 money = money + bet->getHowMuch() * 3;
             }
         }break;
-        case 11:{
+        case 12:{
             if(bet->checkValue(field->getValue())){
                 money = money + bet->getHowMuch() * 6;
             }
         }break;
-        case 12:{
+        case 13:{
             if(bet->checkValue(field->getValue())){
                 money = money + bet->getHowMuch() * 9;
             }
         }break;
-        case 13:{
+        case 14:{
             if(bet->checkValue(field->getValue())){
                 money = money + bet->getHowMuch() * 12;
             }
         }break;
-        case 14:{
+        case 15:{
             if(bet->checkValue(field->getValue())){
                 money = money + bet->getHowMuch() * 18;
             }
         }break;
-        case 15:{
+        case 16:{
             if(field->getValue() == bet->getTab()[0]){
                 money = money + bet->getHowMuch() * 36;
             }
@@ -130,7 +130,7 @@ std::string Player::showBets() {
     std::string output;
     if(bets.size() != 0) {
         for(int i=0;i<bets.size();i++){
-            output+= std::to_string(i+1) + ". " + std::to_string(bets.getByIndex(i)->getType()+1) + " for " + std::to_string(bets.getByIndex(i)->getHowMuch()) +"\n";
+            output+= std::to_string(i+1) + ". " + std::to_string(bets.getByIndex(i)->getType()) + " for " + std::to_string(bets.getByIndex(i)->getHowMuch()) +"\n";
         }
     }else{
         output="You have no bets\n";

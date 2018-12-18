@@ -138,25 +138,50 @@ void Game::menuSwitch(int x) {
                         int c;
                         cout<< "Which column would you like to bet: [1-3]" <<endl;
                         cin>>c;
-                        int tab[12]={1+(c-1),4+(c-1),7+(c-1),10+(c-1),13+(c-1),16+(c-1),19+(c-1),22+(c-1),25+(c-1),28+(c-1),31+(c-1),34+(c-1)};
+                        int *tab=(int*)malloc(12* sizeof(int));
+                        tab[0]=1+(c-1);
+                        tab[1]=4+(c-1);
+                        tab[2]=7+(c-1);
+                        tab[3]=10+(c-1);
+                        tab[4]=13+(c-1);
+                        tab[5]=16+(c-1);
+                        tab[6]=19+(c-1);
+                        tab[7]=22+(c-1);
+                        tab[8]=25+(c-1);
+                        tab[9]=28+(c-1);
+                        tab[10]=31+(c-1);
+                        tab[11]=34+(c-1);
                         players.getByIndex(which)->addBet(money,column,tab,12);
                     }break;
                     case 12:{
                         int c;
                         cout<< "Which sixline would you like to bet: [1-11]" <<endl;
                         cin>>c;
-                        int tab[6]={1+3*(c-1),2+3*(c-1),3+3*(c-1),4+3*(c-1),5+3*(c-1),6+3*(c-1)};
+                        int *tab=(int*)malloc(6* sizeof(int));
+                        tab[0]=1+3*(c-1);
+                        tab[1]=2+3*(c-1);
+                        tab[2]=3+3*(c-1);
+                        tab[3]=4+3*(c-1);
+                        tab[4]=5+3*(c-1);
+                        tab[5]=6+3*(c-1);
                         players.getByIndex(which)->addBet(money,sixLine,tab,6);
                     }break;
                     case 13:{
                         int c;
                         cout<< "Which corner would you like to bet: [1-22]" <<endl;
                         cin>>c;
+                        int *tab=(int*)malloc(4* sizeof(int));
                         if(c%2 == 1){
-                            int tab[4]={1+3*(c-1)/2,2+3*(c-1)/2,4+3*(c-1)/2,5+3*(c-1)/2};
+                            tab[0]=1+3*(c-1)/2;
+                            tab[1]=2+3*(c-1)/2;
+                            tab[2]=4+3*(c-1)/2;
+                            tab[3]=5+3*(c-1)/2;
                             players.getByIndex(which)->addBet(money,cornerBet,tab,4);
                         }else{
-                            int tab[4]={2+3*(c-2)/2,3+3*(c-2)/2,5+3*(c-2)/2,6+3*(c-2)/2};
+                            tab[0]=2+3*(c-1)/2;
+                            tab[1]=3+3*(c-1)/2;
+                            tab[2]=5+3*(c-1)/2;
+                            tab[3]=6+3*(c-1)/2;
                             players.getByIndex(which)->addBet(money,cornerBet,tab,4);
                         }
                     }break;
@@ -164,7 +189,10 @@ void Game::menuSwitch(int x) {
                         int c;
                         cout<< "Which line would you like to bet: [1-12]" <<endl;
                         cin>>c;
-                        int tab[3]={1+3*(c-1),2+3*(c-1),3+3*(c-1)};
+                        int *tab=(int*)malloc(3* sizeof(int));
+                        tab[0]=1+3*(c-1);
+                        tab[1]=2+3*(c-1);
+                        tab[2]=3+3*(c-1);
                         players.getByIndex(which)->addBet(money,line,tab,3);
                     }break;
                     case 15:{
@@ -172,14 +200,16 @@ void Game::menuSwitch(int x) {
                         cout<< "Which numbers to split would you like to bet: " <<endl;
                         cin>>c1;
                         cin>>c2;
-                        int tab[2]={c1,c2};
+                        int *tab=(int*)malloc(2* sizeof(int));
+                        tab[0]=c1;
+                        tab[1]=c2;
                         players.getByIndex(which)->addBet(money,split,tab,2);
                     }break;
                     case 16:{
                         int number;
                         cout<<"What number would you like to bet? [0-36]"<<endl;
                         cin>>number;
-                        int tab[1];
+                        int *tab=(int*)malloc(1* sizeof(int));
                         tab[0]=number;
                         players.getByIndex(which)->addBet(money,straight,tab,1);
                     }break;
@@ -244,7 +274,66 @@ void Game::menuSwitch(int x) {
             }
         }break;
         case 8:{
+            string name;
+            cout<<"Whats the name of new player?\n";
+            cin>>name;
+            std::fstream f;
+            name+=".txt";
+            f.open(name,std::ios::in);
+            if(f.good()){
+                string pName;
+                int money;
+                f>>pName;
+                f>>money;
+                Player nP;
+                nP=Player();
+                nP.setName(pName);
+                nP.addMoney(money);
+                playersNumber++;
+                players.pushBack(nP);
+                while(!f.eof()){
+                    int bt;
+                    enum betType typ;
+                    int nrFields,m;
+                    f>>bt;
+                    switch(bt){
+                        default:{}break;
+                        case 1:{typ=red;}break;
+                        case 2:{typ=black;}break;
+                        case 3:{typ=st18;}break;
+                        case 4:{typ=nd18;}break;
+                        case 5:{typ=even;}break;
+                        case 6:{typ=odd;}break;
+                        case 7:{typ=stDozen;}break;
+                        case 8:{typ=ndDozen;}break;
+                        case 9:{typ=rdDozen;}break;
+                        case 10:{typ=stFour;}break;
+                        case 11:{typ=column;}break;
+                        case 12:{typ=sixLine;}break;
+                        case 13:{typ=cornerBet;}break;
+                        case 14:{typ=line;}break;
+                        case 15:{typ=split;}break;
+                        case 16:{typ=straight;}break;
+                    }
+                    f>>m;
+                    f>>nrFields;
+                    if(nrFields != 0){
+                        int *tab=(int*)malloc(nrFields* sizeof(int));
+                        for(int i=0;i<nrFields;i++){
+                            f>>tab[i];
+                        }
+                        players.getByIndex(playersNumber-1)->addBet(m,typ,tab,nrFields);
+                        players.getByIndex(playersNumber-1)->addMoney(m);
+                    }else{
+                        players.getByIndex(playersNumber-1)->addBet(m,typ);
+                        players.getByIndex(playersNumber-1)->addMoney(m);
 
+                    }
+                }
+            }else{
+                cout<<"Error, with file!"<<endl;
+            }
+            f.close();
         }break;
         case 9:{
             int which;
@@ -262,8 +351,9 @@ void Game::menuSwitch(int x) {
                     f<<players.getByIndex(which)->getMoney()<<"\n";
                     for(int i=0;i<players.getByIndex(which)->getBetsSize();i++){
                         players.getByIndex(which)->getBet(i)->saveToFile(&f);
+                        if(i != players.getByIndex(which)->getBetsSize()-1)
+                            f<<"\n";
                     }
-                    f.close();
                     cout<<"Player is saved in file: "<<players.getByIndex(which)->getName()<<".txt\n";
                     int x;
                     cout<<"Would you like to delete him from this game?\n1.Yes\n2.No\n";
@@ -275,6 +365,8 @@ void Game::menuSwitch(int x) {
                 }else{
                     cout<<"Error, with file!"<<endl;
                 }
+
+                f.close();
             }
         }break;
         case 10:{

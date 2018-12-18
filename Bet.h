@@ -9,7 +9,7 @@
 #include <iostream>
 
 enum betType{
-    red,black,st18,nd18,even,odd,stDozen,ndDozen,rdDozen,stFour,column,sixLine,cornerBet,line,split,straight
+    red=1,black=2,st18=3,nd18=4,even=5,odd=6,stDozen=7,ndDozen=8,rdDozen=9,stFour=10,column=11,sixLine=12,cornerBet=13,line=14,split=15,straight=16
 };
 
 class Bet {
