@@ -25,11 +25,14 @@ public:
     void checkBets(Component*);
     void clearBets();
     std::string showBets();
+    void deleteBet(int);
 
     int getMoney();
     void addMoney(int);
     void setName(std::string);
     std::string getName();
+    int getBetsSize();
+    Bet* getBet(int);
 };
 
 

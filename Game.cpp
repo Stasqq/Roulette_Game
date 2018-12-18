@@ -24,9 +24,11 @@ int Game::printMenu() {
     cout<< "3. Add bet" <<endl;
     cout<< "4. Show money" <<endl;
     cout<< "5. Show bets" <<endl;
-    cout<< "6. Load game from file" <<endl;
-    cout<< "7. Save game to file" <<endl;
-    cout<< "8. Tests" <<endl;
+    cout<< "6. Delete player" <<endl;
+    cout<< "7. Delete bet" <<endl;
+    cout<< "8. Load player from file" <<endl;
+    cout<< "9. Save player to file" <<endl;
+    cout<< "10. Tests" <<endl;
     cout<< "\t 0. Exit" <<endl;
     cout<< "====================================================" <<endl;
 
@@ -209,12 +211,73 @@ void Game::menuSwitch(int x) {
             }
         }break;
         case 6:{
-
+            int which;
+            for(int i=0;i<playersNumber;i++){
+                cout<<i+1<<". "<< players.getByIndex(i)->getName() <<endl;
+            }
+            cout<<"\t0. Exit"<<endl;
+            cin>>which;
+            if(which != 0){
+                which--;
+                players.deleteByIndex(which);
+                playersNumber--;
+            }
         }break;
         case 7:{
-
+            int which;
+            for(int i=0;i<playersNumber;i++){
+                cout<<i+1<<". "<< players.getByIndex(i)->getName() <<endl;
+            }
+            cout<<"\t0. Exit"<<endl;
+            cin>>which;
+            if(which != 0){
+                which--;
+                int betNr;
+                cout<<"Which bet would you like to delete?"<<endl;
+                cout<< players.getByIndex(which)->showBets();
+                cout<<"\t0. Exit"<<endl;
+                cin>>betNr;
+                if(betNr != 0){
+                    betNr--;
+                    players.getByIndex(which)->deleteBet(betNr);
+                }
+            }
         }break;
         case 8:{
+
+        }break;
+        case 9:{
+            int which;
+            for(int i=0;i<playersNumber;i++){
+                cout<<i+1<<". "<< players.getByIndex(i)->getName() <<endl;
+            }
+            cout<<"\t0. Exit"<<endl;
+            cin>>which;
+            if(which != 0){
+                which--;
+                std::fstream f;
+                f.open(players.getByIndex(which)->getName()+".txt",std::ios::out);
+                if(f.good()){
+                    f<<players.getByIndex(which)->getName()<<"\n";
+                    f<<players.getByIndex(which)->getMoney()<<"\n";
+                    for(int i=0;i<players.getByIndex(which)->getBetsSize();i++){
+                        players.getByIndex(which)->getBet(i)->saveToFile(&f);
+                    }
+                    f.close();
+                    cout<<"Player is saved in file: "<<players.getByIndex(which)->getName()<<".txt\n";
+                    int x;
+                    cout<<"Would you like to delete him from this game?\n1.Yes\n2.No\n";
+                    cin>>x;
+                    if(x==1){
+                        players.deleteByIndex(which);
+                        playersNumber--;
+                    }
+                }else{
+                    cout<<"Error, with file!"<<endl;
+                }
+            }
+        }break;
+        case 10:{
 
         }break;
     }

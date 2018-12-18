@@ -16,7 +16,9 @@ void Player::addBet(int howMuch, enum betType typ) {
 }
 
 void Player::addBet(int howMuch, enum betType typ, int *numbers,int howMuchNumbers) {
-    bets.pushBack(Bet(typ,numbers,howMuch,howMuchNumbers));
+    Bet nBet;
+    nBet=Bet(typ,numbers,howMuch,howMuchNumbers);
+    bets.pushBack(nBet);
     money -= howMuch;
 }
 
@@ -136,6 +138,11 @@ std::string Player::showBets() {
     return output;
 }
 
+void Player::deleteBet(int index) {
+    money += bets.getByIndex(index)->getHowMuch();
+    bets.deleteByIndex(index);
+}
+
 int Player::getMoney() {
     return money;
 }
@@ -152,3 +159,10 @@ std::string Player::getName() {
     return name;
 }
 
+int Player::getBetsSize() {
+    return bets.size();
+}
+
+Bet* Player::getBet(int index) {
+    return bets.getByIndex(index);
+}

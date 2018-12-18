@@ -18,6 +18,7 @@ Roulette::Roulette() {
             newC.setColor(input);
             plate.pushBack(newC);
         }
+        f.close();
     }else{
         std::cout<< "Wystapil blad przy odczycie pliku" <<std::endl;
     }

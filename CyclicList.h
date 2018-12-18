@@ -24,6 +24,7 @@ public:
     ~CyclicList<T>();
     CyclicList<T>& operator=(CyclicList<T> const&);
 
+    void deleteByIndex(int);
     T* getByIndex(int);
     void pushBack(T);
     int size();
@@ -82,6 +83,35 @@ CyclicList<T>& CyclicList<T>::operator=(CyclicList<T> const& from){
 
     head=this->head;
     return *this;
+}
+
+template <class T>
+void CyclicList<T>::deleteByIndex(int index) {
+    if(index < size()){
+        if(head == nullptr) return;
+        if(head == head->next && index == 0){
+            delete head;
+            head= nullptr;
+            return;
+        }
+        struct Node<T> * currPtr=head;
+        struct Node<T> * prevPtr;
+        if(index == 0){
+            do{
+                currPtr=currPtr->next;
+            }while(currPtr->next != head);
+            currPtr->next=head->next;
+            delete head;
+            head=currPtr;
+            return;
+        }
+        for(int i=0;i<index;i++){
+            prevPtr=currPtr;
+            currPtr=currPtr->next;
+        }
+        prevPtr->next=currPtr->next;
+        delete currPtr;
+    }
 }
 
 template <class T>

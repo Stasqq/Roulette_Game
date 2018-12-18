@@ -5,6 +5,9 @@
 #ifndef ROULETTE_PROI_V2_BET_H
 #define ROULETTE_PROI_V2_BET_H
 
+#include <fstream>
+#include <iostream>
+
 enum betType{
     red,black,st18,nd18,even,odd,stDozen,ndDozen,rdDozen,stFour,column,sixLine,cornerBet,line,split,straight
 };
@@ -22,9 +25,12 @@ public:
 
     bool checkValue(int);
 
+    void saveToFile(std::fstream*);
+
     int getType();
     int getHowMuch();
     int* getTab();
+    int getNumberOfFields();
 };
 
 
