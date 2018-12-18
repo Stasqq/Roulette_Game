@@ -19,20 +19,32 @@ private:
     std::string name;
 public:
     Player();
-    void addBet(int,enum betType);
-    void addBet(int,enum betType,int*,int);
-    void checkBet(Bet*,Component*);
-    void checkBets(Component*);
+
+    void addBet(int, enum betType);
+
+    void addBet(int, enum betType, int *, int);
+
+    void checkBet(Bet *, Component *);
+
+    void checkBets(Component *);
+
     void clearBets();
+
     std::string showBets();
+
     void deleteBet(int);
 
     int getMoney();
+
     void addMoney(int);
+
     void setName(std::string);
+
     std::string getName();
+
     int getBetsSize();
-    Bet* getBet(int);
+
+    Bet *getBet(int);
 };
 
 

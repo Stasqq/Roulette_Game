@@ -9,7 +9,7 @@
 int main() {
     srand(time(NULL));
     Game g;
-    g=Game();
+    g = Game();
     g.run();
     return 0;
 }

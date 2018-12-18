@@ -8,8 +8,23 @@
 #include <fstream>
 #include <iostream>
 
-enum betType{
-    red=1,black=2,st18=3,nd18=4,even=5,odd=6,stDozen=7,ndDozen=8,rdDozen=9,stFour=10,column=11,sixLine=12,cornerBet=13,line=14,split=15,straight=16
+enum betType {
+    red = 1,
+    black = 2,
+    st18 = 3,
+    nd18 = 4,
+    even = 5,
+    odd = 6,
+    stDozen = 7,
+    ndDozen = 8,
+    rdDozen = 9,
+    stFour = 10,
+    column = 11,
+    sixLine = 12,
+    cornerBet = 13,
+    line = 14,
+    split = 15,
+    straight = 16
 };
 
 class Bet {
@@ -20,16 +35,20 @@ private:
     int numberOfFields;
 public:
     Bet();
-    explicit Bet(enum betType,int); //for first 10 types
-    Bet(enum betType,int*,int,int); //for column,sixLine,cornerBet,line,straight,split
+
+    explicit Bet(enum betType, int); //for first 10 types
+    Bet(enum betType, int *, int, int); //for column,sixLine,cornerBet,line,straight,split
 
     bool checkValue(int);
 
-    void saveToFile(std::fstream*);
+    void saveToFile(std::fstream *);
 
     int getType();
+
     int getHowMuch();
-    int* getTab();
+
+    int *getTab();
+
     int getNumberOfFields();
 };
 

@@ -4,45 +4,45 @@
 
 #include "Bet.h"
 
-Bet::Bet(){
-    bt=red;
-    howMuch=0;
+Bet::Bet() {
+    bt = red;
+    howMuch = 0;
 }
 
 Bet::Bet(enum betType t, int howMuch) {
-    bt=t;
-    Bet::howMuch=howMuch;
-    tab= nullptr;
-    numberOfFields=0;
+    bt = t;
+    Bet::howMuch = howMuch;
+    tab = nullptr;
+    numberOfFields = 0;
 }
 
 Bet::Bet(enum betType t, int *numbers, int howMuch, int numberOfFields) {
-    bt=t;
-    tab=numbers;
-    Bet::howMuch=howMuch;
-    Bet::numberOfFields=numberOfFields;
+    bt = t;
+    tab = numbers;
+    Bet::howMuch = howMuch;
+    Bet::numberOfFields = numberOfFields;
 }
 
 bool Bet::checkValue(int looking) {
-    for(int i=0;i<numberOfFields;i++){
-        if(tab[i]==looking)
+    for (int i = 0; i < numberOfFields; i++) {
+        if (tab[i] == looking)
             return true;
     }
     return false;
 }
 
-void Bet::saveToFile(std::fstream* file) {
-    *file<<bt<<"\n";
-    *file<<howMuch<<"\n";
-    if(tab != nullptr){
-        *file<<numberOfFields<<"\n";
-        for(int i=0;i<numberOfFields;i++){
-            *file<<tab[i];
-            if(i != numberOfFields-1)
-                *file<<"\n";
+void Bet::saveToFile(std::fstream *file) {
+    *file << bt << "\n";
+    *file << howMuch << "\n";
+    if (tab != nullptr) {
+        *file << numberOfFields << "\n";
+        for (int i = 0; i < numberOfFields; i++) {
+            *file << tab[i];
+            if (i != numberOfFields - 1)
+                *file << "\n";
         }
-    }else{
-        *file<<0;
+    } else {
+        *file << 0;
     }
 }
 
@@ -54,10 +54,10 @@ int Bet::getHowMuch() {
     return howMuch;
 }
 
-int* Bet::getTab() {
+int *Bet::getTab() {
     return tab;
 }
 
-int Bet::getNumberOfFields(){
+int Bet::getNumberOfFields() {
     return numberOfFields;
 };

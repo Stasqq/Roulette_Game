@@ -17,7 +17,8 @@ private:
     CyclicList<Component> plate;
 public:
     Roulette();
-    Component* draw();
+
+    Component *draw();
 };
 
 

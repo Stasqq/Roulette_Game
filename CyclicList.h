@@ -8,53 +8,59 @@
 
 #include <iostream>
 
-template <class T>
-struct Node{
+template<class T>
+struct Node {
     T item;
-    struct Node * next;
+    struct Node *next;
 };
 
-template <class T>
+template<class T>
 class CyclicList {
 private:
-    struct Node<T> * head;
+    struct Node<T> *head;
 public:
     CyclicList<T>();
+
     CyclicList<T>(CyclicList<T> &);
+
     ~CyclicList<T>();
-    CyclicList<T>& operator=(CyclicList<T> const&);
+
+    CyclicList<T> &operator=(CyclicList<T> const &);
 
     void deleteByIndex(int);
-    T* getByIndex(int);
+
+    T *getByIndex(int);
+
     void pushBack(T);
+
     int size();
 };
 
-template <class T>
+template<class T>
 CyclicList<T>::CyclicList() {
-    head= nullptr;
+    head = nullptr;
 }
 
-template <class T>
+template<class T>
 CyclicList<T>::CyclicList(CyclicList<T> &from) {
     CyclicList<T> *tmpCL;
     tmpCL = new CyclicList();
     struct Node<T> *tmpP;
-    tmpP=from.head;
+    tmpP = from.head;
 
-    if(tmpP != nullptr){
-        do{
-            tmpCL -> pushBack( tmpP->item );
-            tmpP = tmpP -> next;
-        }while(tmpP != from.head);
+    if (tmpP != nullptr) {
+        do {
+            tmpCL->pushBack(tmpP->item);
+            tmpP = tmpP->next;
+        } while (tmpP != from.head);
     }
 
     head = from.head;
 }
 
-template <class T>
+template<class T>
 CyclicList<T>::~CyclicList<T>() {
-    if(head != nullptr) {
+    if (head != nullptr) {
         if (head->next != head) {
             struct Node<T> *cPtr = head->next;
             struct Node<T> *sPtr;
@@ -69,87 +75,87 @@ CyclicList<T>::~CyclicList<T>() {
     }
 }
 
-template <class T>
-CyclicList<T>& CyclicList<T>::operator=(CyclicList<T> const& from){
-    this->head= nullptr;
-    struct Node<T>* cPtr;
+template<class T>
+CyclicList<T> &CyclicList<T>::operator=(CyclicList<T> const &from) {
+    this->head = nullptr;
+    struct Node<T> *cPtr;
     cPtr = from.head;
-    if(from.head != nullptr){
-        do{
+    if (from.head != nullptr) {
+        do {
             this->pushBack(cPtr->item);
-            cPtr=cPtr->next;
-        }while(cPtr != from.head);
+            cPtr = cPtr->next;
+        } while (cPtr != from.head);
     }
 
-    head=this->head;
+    head = this->head;
     return *this;
 }
 
-template <class T>
+template<class T>
 void CyclicList<T>::deleteByIndex(int index) {
-    if(index < size()){
-        if(head == nullptr) return;
-        if(head == head->next && index == 0){
+    if (index < size()) {
+        if (head == nullptr) return;
+        if (head == head->next && index == 0) {
             delete head;
-            head= nullptr;
+            head = nullptr;
             return;
         }
-        struct Node<T> * currPtr=head;
-        struct Node<T> * prevPtr;
-        if(index == 0){
-            do{
-                currPtr=currPtr->next;
-            }while(currPtr->next != head);
-            currPtr->next=head->next;
+        struct Node<T> *currPtr = head;
+        struct Node<T> *prevPtr;
+        if (index == 0) {
+            do {
+                currPtr = currPtr->next;
+            } while (currPtr->next != head);
+            currPtr->next = head->next;
             delete head;
-            head=currPtr;
+            head = currPtr;
             return;
         }
-        for(int i=0;i<index;i++){
-            prevPtr=currPtr;
-            currPtr=currPtr->next;
+        for (int i = 0; i < index; i++) {
+            prevPtr = currPtr;
+            currPtr = currPtr->next;
         }
-        prevPtr->next=currPtr->next;
+        prevPtr->next = currPtr->next;
         delete currPtr;
     }
 }
 
-template <class T>
-T* CyclicList<T>::getByIndex(int index) {
-    struct Node<T>* cPtr=head;
-    for(int i=0;i<index;i++){
-        cPtr=cPtr->next;
+template<class T>
+T *CyclicList<T>::getByIndex(int index) {
+    struct Node<T> *cPtr = head;
+    for (int i = 0; i < index; i++) {
+        cPtr = cPtr->next;
     }
     return &cPtr->item;
 }
 
-template <class T>
+template<class T>
 void CyclicList<T>::pushBack(T newItem) {
     struct Node<T> *tmp;
     tmp = new struct Node<T>;
-    if(head == nullptr){
-        head=tmp;
-        tmp->item=newItem;
-        tmp->next=head;
-    }else{
-        tmp=head;
-        do{
-            tmp=tmp->next;
-        }while(tmp->next != head);
+    if (head == nullptr) {
+        head = tmp;
+        tmp->item = newItem;
+        tmp->next = head;
+    } else {
+        tmp = head;
+        do {
+            tmp = tmp->next;
+        } while (tmp->next != head);
         Node<T> *newNode;
-        newNode= new Node<T>;
-        tmp->next=newNode;
-        newNode->item=newItem;
-        newNode->next=head;
+        newNode = new Node<T>;
+        tmp->next = newNode;
+        newNode->item = newItem;
+        newNode->next = head;
     }
 }
 
-template <class T>
+template<class T>
 int CyclicList<T>::size() {
-    if(head != nullptr) {
-        if(head == head->next)
+    if (head != nullptr) {
+        if (head == head->next)
             return 1;
-        if(head == head->next->next)
+        if (head == head->next->next)
             return 2;
         struct Node<T> *cPtr;
         cPtr = head;

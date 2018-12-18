@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Stasiek/Desktop/roulette_proi_v2/Game.cpp" "C:/Users/Stasiek/Desktop/roulette_proi_v2/cmake-build-debug/CMakeFiles/roulette_proi_v2.dir/Game.cpp.obj"
   "C:/Users/Stasiek/Desktop/roulette_proi_v2/Player.cpp" "C:/Users/Stasiek/Desktop/roulette_proi_v2/cmake-build-debug/CMakeFiles/roulette_proi_v2.dir/Player.cpp.obj"
   "C:/Users/Stasiek/Desktop/roulette_proi_v2/Roulette.cpp" "C:/Users/Stasiek/Desktop/roulette_proi_v2/cmake-build-debug/CMakeFiles/roulette_proi_v2.dir/Roulette.cpp.obj"
+  "C:/Users/Stasiek/Desktop/roulette_proi_v2/Tests.cpp" "C:/Users/Stasiek/Desktop/roulette_proi_v2/cmake-build-debug/CMakeFiles/roulette_proi_v2.dir/Tests.cpp.obj"
   "C:/Users/Stasiek/Desktop/roulette_proi_v2/main.cpp" "C:/Users/Stasiek/Desktop/roulette_proi_v2/cmake-build-debug/CMakeFiles/roulette_proi_v2.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

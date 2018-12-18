@@ -9,6 +9,7 @@
 #include "CyclicList.h"
 #include "Component.h"
 #include "Player.h"
+#include "Tests.h"
 
 #include <iostream>
 #include <string>
@@ -20,10 +21,30 @@ private:
     CyclicList<Player> players;
 public:
     Game();
-    int printMenu();
-    void menuSwitch(int);
-    void run();
-};
 
+    int printMenu();
+
+    void menuSwitch(int);
+
+    void run();
+
+    void rouletteSpin();
+
+    void addPlayer();
+
+    void addBet();
+
+    void showMoney();
+
+    void showBets();
+
+    void deletePlayer();
+
+    void deleteBet();
+
+    void load();
+
+    void save();
+};
 
 #endif //ROULETTE_PROI_V2_GAME_H

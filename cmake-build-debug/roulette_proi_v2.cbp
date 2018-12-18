@@ -113,6 +113,12 @@
 		<Unit filename="C:/Users/Stasiek/Desktop/roulette_proi_v2/Roulette.h">
 			<Option target="roulette_proi_v2"/>
 		</Unit>
+		<Unit filename="C:/Users/Stasiek/Desktop/roulette_proi_v2/Tests.cpp">
+			<Option target="roulette_proi_v2"/>
+		</Unit>
+		<Unit filename="C:/Users/Stasiek/Desktop/roulette_proi_v2/Tests.h">
+			<Option target="roulette_proi_v2"/>
+		</Unit>
 		<Unit filename="C:/Users/Stasiek/Desktop/roulette_proi_v2/main.cpp">
 			<Option target="roulette_proi_v2"/>
 		</Unit>
