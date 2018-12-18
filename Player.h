@@ -10,6 +10,7 @@
 #include "Component.h"
 
 #include <cstdlib>
+#include <string>
 
 class Player {
 private:
@@ -23,6 +24,7 @@ public:
     void checkBet(Bet*,Component*);
     void checkBets(Component*);
     void clearBets();
+    std::string showBets();
 
     int getMoney();
     void addMoney(int);

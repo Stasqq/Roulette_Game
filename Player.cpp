@@ -124,6 +124,18 @@ void Player::clearBets() {
     bets=CyclicList<Bet>();
 }
 
+std::string Player::showBets() {
+    std::string output;
+    if(bets.size() != 0) {
+        for(int i=0;i<bets.size();i++){
+            output+= std::to_string(i+1) + ". " + std::to_string(bets.getByIndex(i)->getType()+1) + " for " + std::to_string(bets.getByIndex(i)->getHowMuch()) +"\n";
+        }
+    }else{
+        output="You have no bets\n";
+    }
+    return output;
+}
+
 int Player::getMoney() {
     return money;
 }

@@ -27,9 +27,3 @@ Component* Roulette::draw() {
     int x=rand()%74;
     return plate.getByIndex(x);
 }
-
-void Roulette::printPlate() {
-    for(int i=0;i<37;i++){
-        std::cout<< plate.getByIndex(i)->getValue() << ", " << plate.getByIndex(i)->getColor() << std::endl;
-    }
-}

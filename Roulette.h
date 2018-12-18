@@ -18,7 +18,6 @@ private:
 public:
     Roulette();
     Component* draw();
-    void printPlate();
 };
 
 

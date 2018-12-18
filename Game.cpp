@@ -23,7 +23,7 @@ int Game::printMenu() {
     cout<< "2. Add player" <<endl;
     cout<< "3. Add bet" <<endl;
     cout<< "4. Show money" <<endl;
-    cout<< "5. Delete player" <<endl;
+    cout<< "5. Show bets" <<endl;
     cout<< "6. Load game from file" <<endl;
     cout<< "7. Save game to file" <<endl;
     cout<< "8. Tests" <<endl;
@@ -47,8 +47,6 @@ void Game::menuSwitch(int x) {
             cout<<"It's: "<< random->getColor() << " " << random->getValue() <<endl;
             for(int i=0;i<playersNumber;i++){
                 players.getByIndex(i)->checkBets(random);
-            }
-            for(int i=0;i<playersNumber;i++){
                 players.getByIndex(i)->clearBets();
             }
         }break;
@@ -76,7 +74,7 @@ void Game::menuSwitch(int x) {
                 which=which-1;
                 int money;
                 int bt;
-                cout<<"How much money would you like to bet?"<<endl;
+                cout<<"How much money would you like to bet? (You have: "<<players.getByIndex(which)->getMoney()<<")"<<endl;
                 do{
                     cin >> money;
                 }while(money > players.getByIndex(which)->getMoney());
@@ -135,19 +133,45 @@ void Game::menuSwitch(int x) {
                         players.getByIndex(which)->addBet(money,stFour);
                     }break;
                     case 11:{
-
+                        int c;
+                        cout<< "Which column would you like to bet: [1-3]" <<endl;
+                        cin>>c;
+                        int tab[12]={1+(c-1),4+(c-1),7+(c-1),10+(c-1),13+(c-1),16+(c-1),19+(c-1),22+(c-1),25+(c-1),28+(c-1),31+(c-1),34+(c-1)};
+                        players.getByIndex(which)->addBet(money,column,tab,12);
                     }break;
                     case 12:{
-
+                        int c;
+                        cout<< "Which sixline would you like to bet: [1-11]" <<endl;
+                        cin>>c;
+                        int tab[6]={1+3*(c-1),2+3*(c-1),3+3*(c-1),4+3*(c-1),5+3*(c-1),6+3*(c-1)};
+                        players.getByIndex(which)->addBet(money,sixLine,tab,6);
                     }break;
                     case 13:{
-
+                        int c;
+                        cout<< "Which corner would you like to bet: [1-22]" <<endl;
+                        cin>>c;
+                        if(c%2 == 1){
+                            int tab[4]={1+3*(c-1)/2,2+3*(c-1)/2,4+3*(c-1)/2,5+3*(c-1)/2};
+                            players.getByIndex(which)->addBet(money,cornerBet,tab,4);
+                        }else{
+                            int tab[4]={2+3*(c-2)/2,3+3*(c-2)/2,5+3*(c-2)/2,6+3*(c-2)/2};
+                            players.getByIndex(which)->addBet(money,cornerBet,tab,4);
+                        }
                     }break;
                     case 14:{
-
+                        int c;
+                        cout<< "Which line would you like to bet: [1-12]" <<endl;
+                        cin>>c;
+                        int tab[3]={1+3*(c-1),2+3*(c-1),3+3*(c-1)};
+                        players.getByIndex(which)->addBet(money,line,tab,3);
                     }break;
                     case 15:{
-
+                        int c1,c2;
+                        cout<< "Which numbers to split would you like to bet: " <<endl;
+                        cin>>c1;
+                        cin>>c2;
+                        int tab[2]={c1,c2};
+                        players.getByIndex(which)->addBet(money,split,tab,2);
                     }break;
                     case 16:{
                         int number;
@@ -173,7 +197,16 @@ void Game::menuSwitch(int x) {
             }
         }break;
         case 5:{
-
+            int which;
+            for(int i=0;i<playersNumber;i++){
+                cout<<i+1<<". "<< players.getByIndex(i)->getName() <<endl;
+            }
+            cout<<"\t0. Exit"<<endl;
+            cin>>which;
+            if(which != 0){
+                which=which-1;
+                cout<< players.getByIndex(which)->showBets();
+            }
         }break;
         case 6:{
 
@@ -190,12 +223,13 @@ void Game::menuSwitch(int x) {
 void Game::run() {
     int end;
     cout << "Let's start the game!" << endl;
-    do{
+    while(true){
         end=printMenu();
         menuSwitch(end);
+        if(end == 0)
+            return;
         cout << "\tPress enter" << endl;
         getchar();
         getchar();
-    }while(end != 0);
-
+    }
 }

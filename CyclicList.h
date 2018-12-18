@@ -117,9 +117,13 @@ void CyclicList<T>::pushBack(T newItem) {
 template <class T>
 int CyclicList<T>::size() {
     if(head != nullptr) {
+        if(head == head->next)
+            return 1;
+        if(head == head->next->next)
+            return 2;
         struct Node<T> *cPtr;
         cPtr = head;
-        int counter = 0;
+        int counter = 1;
         do {
             counter++;
             cPtr = cPtr->next;
