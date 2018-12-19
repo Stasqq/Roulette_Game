@@ -5,8 +5,8 @@
 #include "Component.h"
 
 Component::Component() {
-    value=0;
-    color="none";
+    value = 0;
+    color = "none";
 }
 
 int Component::getValue() const {

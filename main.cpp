@@ -1,10 +1,15 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
-#include "Roulette.h"
+#include "Game.h"
+#include <windows.h>
+#include <time.h>
 
 int main() {
-    Roulette r;
-    r=Roulette();
-    r.printPlate();
+    srand(time(NULL));
+    Game g;
+    g = Game();
+    g.run();
     return 0;
 }
