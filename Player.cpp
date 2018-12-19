@@ -28,96 +28,112 @@ void Player::checkBet(Bet *bet, Component *field) {
         case 1: {
             if (field->getColor() == "red") {
                 money = money + bet->getHowMuch() * 2;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 2<<std::endl;
             }
         }
             break;
         case 2: {
             if (field->getColor() == "black") {
                 money = money + bet->getHowMuch() * 2;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 2<<std::endl;
             }
         }
             break;
         case 3: {
             if (field->getValue() < 19 && field->getValue() != 0) {
                 money = money + bet->getHowMuch() * 2;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 2<<std::endl;
             }
         }
             break;
         case 4: {
             if (field->getValue() > 18) {
                 money = money + bet->getHowMuch() * 2;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 2<<std::endl;
             }
         }
             break;
         case 5: {
             if (field->getValue() % 2 == 0) {
                 money = money + bet->getHowMuch() * 2;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 2<<std::endl;
             }
         }
             break;
         case 6: {
             if (field->getValue() % 2 == 1) {
                 money = money + bet->getHowMuch() * 2;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 2<<std::endl;
             }
         }
             break;
         case 7: {
             if (field->getValue() > 0 && field->getValue() < 13) {
                 money = money + bet->getHowMuch() * 3;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 3<<std::endl;
             }
         }
             break;
         case 8: {
             if (field->getValue() > 12 && field->getValue() < 25) {
                 money = money + bet->getHowMuch() * 3;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 3<<std::endl;
             }
         }
             break;
         case 9: {
             if (field->getValue() > 24 && field->getValue() < 37) {
                 money = money + bet->getHowMuch() * 3;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 3<<std::endl;
             }
         }
             break;
         case 10: {
             if (field->getValue() < 4) {
                 money = money + bet->getHowMuch() * 7;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 7<<std::endl;
             }
         }
             break;
         case 11: {
             if (bet->checkValue(field->getValue())) {
                 money = money + bet->getHowMuch() * 3;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 3<<std::endl;
             }
         }
             break;
         case 12: {
             if (bet->checkValue(field->getValue())) {
                 money = money + bet->getHowMuch() * 6;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 6<<std::endl;
             }
         }
             break;
         case 13: {
             if (bet->checkValue(field->getValue())) {
                 money = money + bet->getHowMuch() * 9;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 9<<std::endl;
             }
         }
             break;
         case 14: {
             if (bet->checkValue(field->getValue())) {
                 money = money + bet->getHowMuch() * 12;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 12<<std::endl;
             }
         }
             break;
         case 15: {
             if (bet->checkValue(field->getValue())) {
                 money = money + bet->getHowMuch() * 18;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 18<<std::endl;
             }
         }
             break;
         case 16: {
             if (field->getValue() == bet->getTab()[0]) {
                 money = money + bet->getHowMuch() * 36;
+                std::cout<<name<<" won "<<bet->getHowMuch() * 36<<std::endl;
             }
         }
             break;

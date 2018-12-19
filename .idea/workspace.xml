@@ -12,11 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ccf09e6-8d14-4a8c-9cb8-70f832d45a63" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Game.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/Game.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tests.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Player.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,13 +36,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="13288" />
+          <entry key="cpp" value="13355" />
           <entry key="h" value="3559" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="ObjectiveC" value="16847" />
+          <entry key="ObjectiveC" value="16914" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -82,8 +78,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tests.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1241">
-              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            <state relative-caret-position="432">
+              <caret line="118" column="6" lean-forward="true" selection-start-line="118" selection-start-column="6" selection-end-line="118" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -103,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Player.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2720">
-              <caret line="160" column="30" lean-forward="true" selection-start-line="160" selection-start-column="30" selection-end-line="160" selection-end-column="30" />
+            <state relative-caret-position="-758">
+              <caret line="129" column="13" lean-forward="true" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -124,8 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Game.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="116" column="23" selection-start-line="116" selection-start-column="23" selection-end-line="116" selection-end-column="23" />
+            <state relative-caret-position="380">
+              <caret line="153" column="49" lean-forward="true" selection-start-line="153" selection-start-column="49" selection-end-line="153" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -140,7 +136,6 @@
       <list>
         <option value="$PROJECT_DIR$/Component.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/Player.cpp" />
         <option value="$PROJECT_DIR$/Player.h" />
         <option value="$PROJECT_DIR$/Bet.h" />
         <option value="$PROJECT_DIR$/Bet.cpp" />
@@ -152,6 +147,7 @@
         <option value="$PROJECT_DIR$/Game.cpp" />
         <option value="$PROJECT_DIR$/Tests.h" />
         <option value="$PROJECT_DIR$/Tests.cpp" />
+        <option value="$PROJECT_DIR$/Player.cpp" />
       </list>
     </option>
   </component>
@@ -235,12 +231,12 @@
       <workItem from="1545078298764" duration="3986000" />
       <workItem from="1545128304296" duration="13296000" />
       <workItem from="1545171123702" duration="1143000" />
-      <workItem from="1545220988194" duration="5331000" />
+      <workItem from="1545220988194" duration="6108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55788000" />
+    <option name="totallyTimeSpent" value="56565000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -357,6 +353,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Game.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="153" column="49" lean-forward="true" selection-start-line="153" selection-start-column="49" selection-end-line="153" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Game.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -367,20 +370,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Game.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="116" column="23" selection-start-line="116" selection-start-column="23" selection-end-line="116" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Player.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2720">
-          <caret line="160" column="30" lean-forward="true" selection-start-line="160" selection-start-column="30" selection-end-line="160" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Player.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9">
@@ -388,6 +377,13 @@
           <folding>
             <element signature="e#113#129#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Player.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-758">
+          <caret line="129" column="13" lean-forward="true" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -403,8 +399,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1241">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="432">
+          <caret line="118" column="6" lean-forward="true" selection-start-line="118" selection-start-column="6" selection-end-line="118" selection-end-column="6" />
         </state>
       </provider>
     </entry>
