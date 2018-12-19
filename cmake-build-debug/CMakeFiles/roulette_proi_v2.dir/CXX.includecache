@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Stasiek/Desktop/roulette_proi_v2/Bet.cpp
-Bet.h
-C:/Users/Stasiek/Desktop/roulette_proi_v2/Bet.h
-
 C:/Users/Stasiek/Desktop/roulette_proi_v2/Bet.h
 fstream
 -
@@ -23,10 +19,6 @@ string
 C:/Users/Stasiek/Desktop/roulette_proi_v2/CyclicList.h
 iostream
 -
-
-C:/Users/Stasiek/Desktop/roulette_proi_v2/Game.cpp
-Game.h
-C:/Users/Stasiek/Desktop/roulette_proi_v2/Game.h
 
 C:/Users/Stasiek/Desktop/roulette_proi_v2/Game.h
 Roulette.h
@@ -37,6 +29,8 @@ Component.h
 C:/Users/Stasiek/Desktop/roulette_proi_v2/Component.h
 Player.h
 C:/Users/Stasiek/Desktop/roulette_proi_v2/Player.h
+Tests.h
+C:/Users/Stasiek/Desktop/roulette_proi_v2/Tests.h
 iostream
 -
 string
@@ -66,5 +60,27 @@ iostream
 fstream
 -
 cstdlib
+-
+
+C:/Users/Stasiek/Desktop/roulette_proi_v2/Tests.cpp
+Tests.h
+C:/Users/Stasiek/Desktop/roulette_proi_v2/Tests.h
+
+C:/Users/Stasiek/Desktop/roulette_proi_v2/Tests.h
+Roulette.h
+C:/Users/Stasiek/Desktop/roulette_proi_v2/Roulette.h
+CyclicList.h
+C:/Users/Stasiek/Desktop/roulette_proi_v2/CyclicList.h
+Component.h
+C:/Users/Stasiek/Desktop/roulette_proi_v2/Component.h
+Player.h
+C:/Users/Stasiek/Desktop/roulette_proi_v2/Player.h
+Bet.h
+C:/Users/Stasiek/Desktop/roulette_proi_v2/Bet.h
+Game.h
+C:/Users/Stasiek/Desktop/roulette_proi_v2/Game.h
+iostream
+-
+string
 -
 

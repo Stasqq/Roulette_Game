@@ -10,12 +10,27 @@
 #include "Component.h"
 #include "Player.h"
 #include "Bet.h"
+#include "Game.h"
 
 #include <iostream>
 #include <string>
 
 class Tests {
 public:
+    bool spinTest();
+
+    bool addPlayerTest();
+
+    bool deletePlayerTest();
+
+    bool addBetTest();
+
+    bool deleteBetTest();
+
+    bool showMoneyTest();
+
+    bool saveAndLoadTest();
+
     bool autonomicTest();
 };
 

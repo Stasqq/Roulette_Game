@@ -19,6 +19,7 @@ private:
     int playersNumber;
     Roulette roulette;
     CyclicList<Player> players;
+    int whichPlayer();
 public:
     Game();
 
@@ -30,21 +31,25 @@ public:
 
     void rouletteSpin();
 
-    void addPlayer();
+    void addPlayer(std::string,int);
 
-    void addBet();
+    void addBet(Player*);
 
-    void showMoney();
+    std::string showMoney(Player*);
 
-    void showBets();
+    std::string showBets(Player*);
 
-    void deletePlayer();
+    void deleteBet(Player*);
 
-    void deleteBet();
+    void load(std::string);
 
-    void load();
+    void save(Player*);
 
-    void save();
+    void tests();
+
+    int getPlayersNumber();
+
+    CyclicList<Player>* getPlayersList();
 };
 
 #endif //ROULETTE_PROI_V2_GAME_H

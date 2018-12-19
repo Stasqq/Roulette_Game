@@ -15,6 +15,16 @@ Game::Game() {
     players = CyclicList<Player>();
 }
 
+int Game::whichPlayer() {
+    int which;
+    for (int i = 0; i < playersNumber; i++) {
+        cout << i + 1 << ". " << players.getByIndex(i)->getName() << endl;
+    }
+    cout << "\t0. Exit" << endl;
+    cin >> which;
+    return which;
+}
+
 int Game::printMenu() {
     int output;
 
@@ -50,39 +60,73 @@ void Game::menuSwitch(int x) {
         }
             break;
         case 2: {
-            addPlayer();
+            string name;
+            int money;
+            cout << "Enter name of new player: " << endl;
+            cin >> name;
+            cout << "How much money for start: " << endl;
+            cin >> money;
+            addPlayer(name,money);
         }
             break;
         case 3: {
-            addBet();
+            int which=whichPlayer();
+            if(which != 0){
+                which--;
+                addBet(players.getByIndex(which));
+            }
         }
             break;
         case 4: {
-            showMoney();
+            int which=whichPlayer();
+            if(which != 0){
+                which--;
+                cout<<showMoney(players.getByIndex(which));
+            }
         }
             break;
         case 5: {
-            showBets();
+            int which=whichPlayer();
+            if(which != 0){
+                which--;
+                cout<<showBets(players.getByIndex(which));
+            }
         }
             break;
         case 6: {
-            deletePlayer();
+            int which=whichPlayer();
+            if(which != 0){
+                which--;
+                players.deleteByIndex(which);
+                playersNumber--;
+            }
         }
             break;
         case 7: {
-            deleteBet();
+            int which=whichPlayer();
+            if(which != 0){
+                which--;
+                deleteBet(players.getByIndex(which));
+            }
         }
             break;
         case 8: {
-            load();
+            string name;
+            cout << "Whats the name of new player?\n";
+            cin >> name;
+            load(name);
         }
             break;
         case 9: {
-            save();
+            int which=whichPlayer();
+            if(which != 0){
+                which--;
+                save(players.getByIndex(which));
+            }
         }
             break;
         case 10: {
-
+            tests();
         }
             break;
     }
@@ -112,13 +156,7 @@ void Game::rouletteSpin() {
     }
 }
 
-void Game::addPlayer() {
-    string name;
-    int money;
-    cout << "Enter name of new player: " << endl;
-    cin >> name;
-    cout << "How much money for start: " << endl;
-    cin >> money;
+void Game::addPlayer(std::string name,int money) {
     Player nP;
     nP.addMoney(money);
     nP.setName(name);
@@ -126,22 +164,14 @@ void Game::addPlayer() {
     players.pushBack(nP);
 }
 
-void Game::addBet() {
-    int which;
-    for (int i = 0; i < playersNumber; i++) {
-        cout << i + 1 << ". " << players.getByIndex(i)->getName() << endl;
-    }
-    cout << "\t0. Exit" << endl;
-    cin >> which;
-    if (which != 0) {
-        which = which - 1;
+void Game::addBet(Player *player) {
         int money;
         int bt;
-        cout << "How much money would you like to bet? (You have: " << players.getByIndex(which)->getMoney() << ")"
+        cout << "How much money would you like to bet? (You have: " << player->getMoney() << ")"
              << endl;
         do {
             cin >> money;
-        } while (money > players.getByIndex(which)->getMoney());
+        } while (money > player->getMoney());
         cout << "What type of bet?" << endl;
         cout << "1. Red" << endl;
         cout << "2. Black" << endl;
@@ -169,43 +199,43 @@ void Game::addBet() {
             }
                 break;
             case 1: {
-                players.getByIndex(which)->addBet(money, red);
+                player->addBet(money, red);
             }
                 break;
             case 2: {
-                players.getByIndex(which)->addBet(money, black);
+                player->addBet(money, black);
             }
                 break;
             case 3: {
-                players.getByIndex(which)->addBet(money, st18);
+                player->addBet(money, st18);
             }
                 break;
             case 4: {
-                players.getByIndex(which)->addBet(money, nd18);
+                player->addBet(money, nd18);
             }
                 break;
             case 5: {
-                players.getByIndex(which)->addBet(money, even);
+                player->addBet(money, even);
             }
                 break;
             case 6: {
-                players.getByIndex(which)->addBet(money, odd);
+                player->addBet(money, odd);
             }
                 break;
             case 7: {
-                players.getByIndex(which)->addBet(money, stDozen);
+                player->addBet(money, stDozen);
             }
                 break;
             case 8: {
-                players.getByIndex(which)->addBet(money, ndDozen);
+                player->addBet(money, ndDozen);
             }
                 break;
             case 9: {
-                players.getByIndex(which)->addBet(money, rdDozen);
+                player->addBet(money, rdDozen);
             }
                 break;
             case 10: {
-                players.getByIndex(which)->addBet(money, stFour);
+                player->addBet(money, stFour);
             }
                 break;
             case 11: {
@@ -225,7 +255,7 @@ void Game::addBet() {
                 tab[9] = 28 + (c - 1);
                 tab[10] = 31 + (c - 1);
                 tab[11] = 34 + (c - 1);
-                players.getByIndex(which)->addBet(money, column, tab, 12);
+                player->addBet(money, column, tab, 12);
             }
                 break;
             case 12: {
@@ -239,7 +269,7 @@ void Game::addBet() {
                 tab[3] = 4 + 3 * (c - 1);
                 tab[4] = 5 + 3 * (c - 1);
                 tab[5] = 6 + 3 * (c - 1);
-                players.getByIndex(which)->addBet(money, sixLine, tab, 6);
+                player->addBet(money, sixLine, tab, 6);
             }
                 break;
             case 13: {
@@ -252,13 +282,13 @@ void Game::addBet() {
                     tab[1] = 2 + 3 * (c - 1) / 2;
                     tab[2] = 4 + 3 * (c - 1) / 2;
                     tab[3] = 5 + 3 * (c - 1) / 2;
-                    players.getByIndex(which)->addBet(money, cornerBet, tab, 4);
+                    player->addBet(money, cornerBet, tab, 4);
                 } else {
                     tab[0] = 2 + 3 * (c - 1) / 2;
                     tab[1] = 3 + 3 * (c - 1) / 2;
                     tab[2] = 5 + 3 * (c - 1) / 2;
                     tab[3] = 6 + 3 * (c - 1) / 2;
-                    players.getByIndex(which)->addBet(money, cornerBet, tab, 4);
+                    player->addBet(money, cornerBet, tab, 4);
                 }
             }
                 break;
@@ -270,7 +300,7 @@ void Game::addBet() {
                 tab[0] = 1 + 3 * (c - 1);
                 tab[1] = 2 + 3 * (c - 1);
                 tab[2] = 3 + 3 * (c - 1);
-                players.getByIndex(which)->addBet(money, line, tab, 3);
+                player->addBet(money, line, tab, 3);
             }
                 break;
             case 15: {
@@ -281,7 +311,7 @@ void Game::addBet() {
                 int *tab = (int *) malloc(2 * sizeof(int));
                 tab[0] = c1;
                 tab[1] = c2;
-                players.getByIndex(which)->addBet(money, split, tab, 2);
+                player->addBet(money, split, tab, 2);
             }
                 break;
             case 16: {
@@ -290,80 +320,39 @@ void Game::addBet() {
                 cin >> number;
                 int *tab = (int *) malloc(1 * sizeof(int));
                 tab[0] = number;
-                players.getByIndex(which)->addBet(money, straight, tab, 1);
+                player->addBet(money, straight, tab, 1);
             }
                 break;
         }
-    }
+
 }
 
 
-void Game::showMoney() {
-    int which;
-    for (int i = 0; i < playersNumber; i++) {
-        cout << i + 1 << ". " << players.getByIndex(i)->getName() << endl;
-    }
-    cout << "\t0. Exit" << endl;
-    cin >> which;
-    if (which != 0) {
-        which = which - 1;
-        cout << "Player " << players.getByIndex(which)->getName() << " has " << players.getByIndex(which)->getMoney()
-             << " money" << endl;
-    }
+std::string Game::showMoney(Player* player) {
+    string output;
+    output="Player "+player->getName()+" has " + std::to_string(player->getMoney())+" money"+"\n";
+    return output;
 }
 
-void Game::showBets() {
-    int which;
-    for (int i = 0; i < playersNumber; i++) {
-        cout << i + 1 << ". " << players.getByIndex(i)->getName() << endl;
-    }
-    cout << "\t0. Exit" << endl;
-    cin >> which;
-    if (which != 0) {
-        which = which - 1;
-        cout << players.getByIndex(which)->showBets();
-    }
+std::string Game::showBets(Player* player) {
+    string output;
+    output=player->showBets();
+    return output;
 }
 
-void Game::deletePlayer() {
-    int which;
-    for (int i = 0; i < playersNumber; i++) {
-        cout << i + 1 << ". " << players.getByIndex(i)->getName() << endl;
-    }
-    cout << "\t0. Exit" << endl;
-    cin >> which;
-    if (which != 0) {
-        which--;
-        players.deleteByIndex(which);
-        playersNumber--;
-    }
-}
-
-void Game::deleteBet() {
-    int which;
-    for (int i = 0; i < playersNumber; i++) {
-        cout << i + 1 << ". " << players.getByIndex(i)->getName() << endl;
-    }
-    cout << "\t0. Exit" << endl;
-    cin >> which;
-    if (which != 0) {
-        which--;
+void Game::deleteBet(Player* player) {
         int betNr;
         cout << "Which bet would you like to delete?" << endl;
-        cout << players.getByIndex(which)->showBets();
+        cout << player->showBets();
         cout << "\t0. Exit" << endl;
         cin >> betNr;
         if (betNr != 0) {
             betNr--;
-            players.getByIndex(which)->deleteBet(betNr);
+            player->deleteBet(betNr);
         }
-    }
 }
 
-void Game::load() {
-    string name;
-    cout << "Whats the name of new player?\n";
-    cin >> name;
+void Game::load(std::string name) {
     std::fstream f;
     name += ".txt";
     f.open(name, std::ios::in);
@@ -473,37 +462,48 @@ void Game::load() {
     f.close();
 }
 
-void Game::save() {
-    int which;
-    for (int i = 0; i < playersNumber; i++) {
-        cout << i + 1 << ". " << players.getByIndex(i)->getName() << endl;
-    }
-    cout << "\t0. Exit" << endl;
-    cin >> which;
-    if (which != 0) {
-        which--;
+void Game::save(Player* player) {
         std::fstream f;
-        f.open(players.getByIndex(which)->getName() + ".txt", std::ios::out);
+        f.open(player->getName() + ".txt", std::ios::out);
         if (f.good()) {
-            f << players.getByIndex(which)->getName() << "\n";
-            f << players.getByIndex(which)->getMoney() << "\n";
-            for (int i = 0; i < players.getByIndex(which)->getBetsSize(); i++) {
-                players.getByIndex(which)->getBet(i)->saveToFile(&f);
-                if (i != players.getByIndex(which)->getBetsSize() - 1)
+            f << player->getName() << "\n";
+            f << player->getMoney() << "\n";
+            for (int i = 0; i < player->getBetsSize(); i++) {
+                player->getBet(i)->saveToFile(&f);
+                if (i != player->getBetsSize() - 1)
                     f << "\n";
-            }
-            cout << "Player is saved in file: " << players.getByIndex(which)->getName() << ".txt\n";
-            int x;
-            cout << "Would you like to delete him from this game?\n1.Yes\n2.No\n";
-            cin >> x;
-            if (x == 1) {
-                players.deleteByIndex(which);
-                playersNumber--;
             }
         } else {
             cout << "Error, with file!" << endl;
         }
 
         f.close();
+}
+
+void Game::tests() {
+    cout<<"Autonomic test or manual?"<<endl;
+    cout<<"1. Autonomic\n2.Manual"<<endl;
+    cout << "\t0. Exit" << endl;
+    int choice;
+    cin>>choice;
+    if(choice != 0){
+        Tests t;
+        t=Tests();
+        if(choice == 1){
+            if(t.autonomicTest())
+                cout<<"Program works well =)"<<endl;
+            else
+                cout<<"There are some errors!"<<endl;
+        }else{
+
+        }
     }
+}
+
+int Game::getPlayersNumber(){
+    return playersNumber;
+}
+
+CyclicList<Player>* Game::getPlayersList(){
+    return &players;
 }
